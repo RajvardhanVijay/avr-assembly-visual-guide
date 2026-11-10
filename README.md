@@ -27,14 +27,13 @@ loop:
 
 * **Program Memory (Flash):** Program Memory, also referred to as flash, is where your code is stored. Depending on settings in the fuse bits, the entire flash memory can be used as application storage or a portion can be code-blocked off for a bootloader program. Flash memory is non-volatile meaning its data does not go away when the microcontroller loses power. Flash cannot be accessed as quickly as Data Memory and individual bytes cannot be modified at a time so it is not a good place to store variables which constantly change. However, in addition to storing your application code, it is a good place to put constants like lookup tables or strings.
 * **Data Memory:** Data Memory is composed of four parts:
-
--Register File
--I/O Registers
--Extended I/O Registers
--Internal SRAM
+    -Register File
+    -I/O Registers
+    -Extended I/O Registers
+    -Internal SRAM
 Unlike flash, Data Memory is not composed of a single memory type. Rather, it is a contiguous mapping of addresses across multiple memory types.
 
-![AVR Memory Architecture Layout](types.png)
+![AVR Memory Architecture Layout](images/types.png)
 
 For now we will focus on two main parts Register File and I/O Registers:-
 
@@ -43,7 +42,7 @@ The register file begins at the start of Data Memory and contains 32 general pur
 The I/O Registers are locations in Data Memory which control certain microcontroller functions. All of the data direction registers and ports (e.g. DDRB and PORTB) are located in the I/O Register portion of Data Memory. Because they are needed so often, there are special instructions which allow quick access and modification of the I/O Registers.
 The I/O Registers are non-volatile. They will initialize to default values that may or may not need to be changed by your program.
 
-![about](about.png)
+![about](images/about.png)
 
 > *Credit: RJH Coding Tutorials*
 
