@@ -31,9 +31,10 @@ loop:
     - I/O Registers
     - Extended I/O Registers
     - Internal SRAM
+
 Unlike flash, Data Memory is not composed of a single memory type. Rather, it is a contiguous mapping of addresses across multiple memory types.
 
-![AVR Memory Architecture Layout](images/avrmemeory.png)
+![AVR Memory Architecture Layout](images/avrmemory.png)
 
 For now we will focus on two main parts Register File and I/O Registers:-
 
