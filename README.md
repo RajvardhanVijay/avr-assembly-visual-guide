@@ -25,8 +25,6 @@ loop:
 
 ## 🔍 Line-by-Line Execution Breakdown
 
-![LDI Animation](images/ldi.gif)
-
 ### 1. `ldi r16, 0b00100000`
 * **Command:** `ldi` (Load Immediate).
 * **What it does:** Loads the raw binary number `00100000` directly into a temporary workspace called **Register 16 (r16)**.
@@ -34,7 +32,8 @@ loop:
   * `r16` = `00100000`
   * This specific binary configuration targets the **5th bit (b5)**, which corresponds to Digital Pin 13 on an Arduino Uno.
 
-![DDRB Animation](images/ddrb.gif)
+
+![LDI Animation](images/ldi.gif)
 
 ### 2. `out DDRB, r16`
 * **Command:** `out` (Output to I/O Register).
@@ -43,7 +42,7 @@ loop:
   * Setting a bit to `1` in the direction register configures that specific pin as an **Output**. 
   * Pin 13 is now officially set to output mode.
 
-![PORTB Animation](images/portb.gif)
+![DDRB Animation](images/ddrb.gif)
 
 ### 3. `out PORTB, r16`
 * **Command:** `out` (Output to I/O Register).
@@ -51,6 +50,8 @@ loop:
 * **Hardware State:** 
   * The voltage at Pin 13 shifts directly from **0V (LOW) to 5V (HIGH)**.
   * If an LED is connected to Pin 13, it turns on right at this moment!
+
+![PORTB Animation](images/portb.gif)
 
 ### 4. `loop: rjmp loop`
 * **Command:** `rjmp` (Relative Jump).
